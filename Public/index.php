@@ -83,5 +83,6 @@ echo '<hr>Ultimo ID inserido'.$db->ultimoIdInserido();
     ?>
     <script src="<?=URL?>/public/bootstrap/js/bootstrap.js"></script>
     <script src="<?=URL?>/public/js/query.js"></script>
+    gfhjgdcf yi
 </body>
 </html>
