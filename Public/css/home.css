@@ -1,0 +1,137 @@
+* {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section{
+  margin-bottom: 50px;
+}
+
+.banner{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.banner img{
+  width: 100%;
+  height: auto;
+}
+
+h3{
+  margin-left: 3rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-bottom: 20px;
+  margin-top: -200px;
+  padding-top: 20px;
+}
+
+.main-container h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  margin-left: 10%;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 130px;
+  margin-bottom: 10px;
+}
+
+.product-card h2 {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.price-new {
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.product-card button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-top: auto;
+}
+
+.product-card button:hover {
+  background-color: #444;
+}
+
+/*separação dos mains*/
+.main-container + .main-container {
+  margin-top: 40px;
+}
+
+.separator {
+  height: 40px;
+  background-color: #f9f9f9;
+}
+
+/* Estilo padrão (desktop) */
+.mobile-banner {
+  display: none; /* Esconde o banner mobile por padrão */
+}
+
+.desktop-banner {
+  display: block; /* Mostra o banner desktop por padrão */
+  width: 100%; /* Ajuste conforme necessário */
+}
+
+/* Estilo para dispositivos móveis */
+@media (max-width: 768px) {
+  .desktop-banner {
+    display: none; /* Esconde o banner desktop em telas menores */
+  }
+
+  .mobile-banner {
+    display: block; /* Mostra o banner mobile em telas menores */
+    width: 100%; /* Ajuste conforme necessário */
+  }
+}
