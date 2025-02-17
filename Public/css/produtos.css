@@ -16,24 +16,24 @@ main{
   justify-content: center;
 }
 
-.banner{
+.banner-c{
   display: flex;
   justify-content: center;
   width: 100%;
   height: auto;
 }
 
-.banner img{
+.banner-c img{
   width: 100%;
   height: auto;
+  margin-bottom: 100px;
 }
 
 h3{
-  margin-top: 5rem;
   margin-left: 3rem;
 }
 
-.product-container {
+.product-container-c {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -41,7 +41,7 @@ h3{
   margin-bottom: 50px;
 }
 
-.product-card {
+.product-card-c {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,13 +53,13 @@ h3{
   background-color: #f9f9f9;
 }
 
-.product-card img {
+.product-card-c img {
   max-width: 100%;
   height: 130px;
   margin-bottom: 10px;
 }
 
-.product-card h2 {
+.product-card-c h2 {
   font-size: 1.1em;
   margin-bottom: 8px;
 }
@@ -71,7 +71,7 @@ h3{
   margin: 10px 0;
 }
 
-.product-card button {
+.product-card-c button {
   background-color: #000;
   color: #fff;
   border: none;
@@ -82,33 +82,12 @@ h3{
   margin-top: auto;
 }
 
-.product-card button:hover {
+.product-card-c button:hover {
   background-color: #444;
 }
+
 
 .separator {
   height: 40px;
   background-color: #f9f9f9;
-}
-
-/* Estilo padrão (desktop) */
-.mobile-banner {
-  display: none; /* Esconde o banner mobile por padrão */
-}
-
-.desktop-banner {
-  display: block; /* Mostra o banner desktop por padrão */
-  width: 100%; /* Ajuste conforme necessário */
-}
-
-/* Estilo para dispositivos móveis */
-@media (max-width: 768px) {
-  .desktop-banner {
-    display: none; /* Esconde o banner desktop em telas menores */
-  }
-
-  .mobile-banner {
-    display: block; /* Mostra o banner mobile em telas menores */
-    width: 100%; /* Ajuste conforme necessário */
-  }
 }

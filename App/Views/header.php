@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="<?=URL?>/Public\css\header.css">
     <link rel="stylesheet" href="<?=URL?>/Public\css\footer.css">
     <link rel="stylesheet" type="text/css" href="<?=URL?>/Public/bootstrap/css/bootstrap.css"/>
-    <link rel="shortcut icon" href="Public\img\Nappa_favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=URL?>/Public/img/Nappa_favicon.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-sm position-fixed-top">
-                <a class="navbar-brand" href="<?=URL?>"><img src="./Public\img\logo.png" alt="Nappa Logo"></a>
+                <a class="navbar-brand" href="<?=URL?>"><img src="<?=URL?>/Public/img/logo.png" alt="Nappa Logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Menu alinhado à esquerda -->
-                    <ul class="nav nav-underline ">
+                    <ul class="nav nav-underline">
                         <li class="nav-item">
                             <a class="nav-link" href="<?=URL?>/paginas/creatina" data-tooltip="tooltip" title="Creatina">Creatina</a>
                         </li>

@@ -1,7 +1,7 @@
     <footer>
             <div class="footer-container">
                 <div class="footer-section logo-section">
-                    <img src="Public\img\logo.png" alt="Logo Nappa">
+                    <img src="<?=URL?>/Public/img/logo.png" alt="Logo Nappa">
                 </div>
                 <div class="footer-section">
                     <h3>Ajuda</h3>
@@ -19,19 +19,19 @@
                     <h3>Nossas Redes</h3>
                     <div class="social-icons">
                         <div class="social-item">
-                            <img src="Public\img\instagram.png" alt="Instagram">
+                            <img src="<?=URL?>/Public/img/instagram.png" alt="Instagram">
                             <a href="#">@nappa_sup</a>
                         </div>
                         <div class="social-item">
-                            <img src="Public\img\facebook.png" alt="Facebook">
+                            <img src="<?=URL?>/Public/img/facebook.png" alt="Facebook">
                             <a href="#">@nappa_sup</a>
                         </div>
                         <div class="social-item">
-                            <img src="Public\img\twitter.png" alt="Twitter">
+                            <img src="<?=URL?>/Public/img/twitter.png" alt="Twitter">
                             <a href="#">@nappa_oficial</a>
                         </div>
                         <div class="social-item">
-                            <img src="Public\img\youtube.png" alt="YouTube">
+                            <img src="<?=URL?>/Public/img/youtube.png" alt="YouTube">
                             <a href="#">Nappa Suplements</a>
                         </div>
                     </div>
@@ -39,19 +39,19 @@
                 <div class="footer-section">
                     <h3>Formas de Pagamento</h3>
                     <div class="payment-icons">
-                        <img src="Public\img\visa.png" alt="Visa">
-                        <img src="Public\img\master.png" alt="Mastercard">
-                        <img src="Public\img\elo.png" alt="Elo">
-                        <img src="Public\img\paypal.png" alt="PayPal">
-                        <img src="Public\img\pix.png" alt="Pix">
-                        <img src="Public\img\boleto.png" alt="Boleto">
+                        <img src="<?=URL?>/Public/img/visa.png" alt="Visa">
+                        <img src="<?=URL?>/Public/img/master.png" alt="Mastercard">
+                        <img src="<?=URL?>/Public/img/elo.png" alt="Elo">
+                        <img src="<?=URL?>/Public/img/paypal.png" alt="PayPal">
+                        <img src="<?=URL?>/Public/img/pix.png" alt="Pix">
+                        <img src="<?=URL?>/Public/img//boleto.png" alt="Boleto">
                     </div>
                 </div>
                 <div class="footer-section">
                     <h3>Selos de Segurança</h3>
                     <div class="security-icons">
-                        <img src="Public\img\google.png" alt="Google">
-                        <img src="Public\img\encprity.png" alt="Let's Encrypt">
+                        <img src="<?=URL?>/Public/img/google.png" alt="Google">
+                        <img src="<?=URL?>/Public/img/encprity.png" alt="Let's Encrypt">
                     </div>
                 </div>
             </div>
