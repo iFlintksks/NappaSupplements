@@ -4,8 +4,9 @@ header{
 img{
     width: 100px;
 }
-
+.navlink.active{
+    color: black;
+}
 .nav-link{
     margin-left: 80px;
-    color: black;
 }
