@@ -4,10 +4,12 @@ require_once '../App/Libraries/Controller.php';
 class Paginas extends Controller{
     public function index(){
       if(Sessao::estaLogado()):
-        Url::redirecionar('posts');
-      endif;
         $this->view('pagina/home');
+      else:
+        $this->view('pagina/home');
+      endif;
     }
+
     public function creatina(){
      $this->view('pagina/creatina');
     }

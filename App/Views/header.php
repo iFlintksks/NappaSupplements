@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="<?=URL?>/Public\css\footer.css">
     <link rel="stylesheet" type="text/css" href="<?=URL?>/Public/bootstrap/css/bootstrap.css"/>
     <link rel="shortcut icon" href="<?=URL?>/Public/img/Nappa_favicon.png" type="image/x-icon">
+    <!-- Adicione o Font Awesome para usar ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -31,7 +33,7 @@
                             <a class="nav-link" href="<?=URL?>/paginas/whey" data-tooltip="tooltip" title="Whey">Whey</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?=URL?>/paginas/barraproteica" data-tooltip="tooltip" title="Sobre nós">Barra Protéica</a>
+                            <a class="nav-link" href="<?=URL?>/paginas/barraproteica" data-tooltip="tooltip" title="Barra Protéica">Barra Protéica</a>
                         </li>
                     </ul>
                 </div>
@@ -39,16 +41,19 @@
                 <?php if(isset($_SESSION['usuario_id'])): ?>
                     <span class="navbar-text">
                         <p>Olá, <?= $_SESSION['usuario_nome'] ?>, seja bem-vindo(a)!</p>
+                        <!-- Ícone do carrinho de compras -->
+                        <a href="<?=URL?>/carrinho" class="btn btn-sm btn-outline-primary ml-2" data-tooltip="tooltip" title="Carrinho de Compras">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
                         <a class="btn btn-sm btn-danger" href="<?=URL?>/usuarios/sair" data-tooltip="tooltip" title="Sair do sistema">Sair</a>
                     </span>
-                    <?php else: ?>
-
-                <!-- Botões alinhados à direita da tela -->
-                <div class="position-absolute" style="right: 0;">
-                    <a class="btn btn-info mr-3" 
-                    href="<?=URL?>/usuarios/cadastrar" data-tooltip="tooltip" title="Não tem uma conta? Cadastre-se">Cadastre-se</a>
-                    <a class="btn btn-info" href="<?=URL?>/usuarios/login" data-tooltip="tooltip" title="Tem uma conta? Faça login">Entrar</a>
-                </div>
+                <?php else: ?>
+                    <!-- Botões alinhados à direita da tela -->
+                    <div class="position-absolute" style="right: 0;">
+                        <a class="btn btn-info mr-3" 
+                        href="<?=URL?>/usuarios/cadastrar" data-tooltip="tooltip" title="Não tem uma conta? Cadastre-se">Cadastre-se</a>
+                        <a class="btn btn-info" href="<?=URL?>/usuarios/login" data-tooltip="tooltip" title="Tem uma conta? Faça login">Entrar</a>
+                    </div>
                 <?php endif; ?>
             </nav>
         </div>

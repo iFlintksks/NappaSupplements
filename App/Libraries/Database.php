@@ -1,42 +1,57 @@
 <?php
-class Database{
-    private $host = "localhost";
-    private $usuario = "root";
-    private $senha = "";
-    private $banco = "blogaula";
-    private $porta = "3307"; //verificar a porta do seu banco
-    private $dbh;
-    private $stmt;
+class Database
+{
+    private $host = "localhost"; // Host do banco de dados
+    private $usuario = "root"; // Usuário do banco de dados
+    private $senha = ""; // Senha do banco de dados
+    private $banco = "bd_nappa"; // Nome do banco de dados
+    private $porta = "3307"; // Porta do banco de dados (verifique a porta correta)
+    private $dbh; // Objeto PDO (conexão com o banco)
+    private $stmt; // Statement para executar queries
 
-    public function __construct(){
-        //fonte de dados ou DNS  que contém as informações para conectar ao banco de dados.
-        $dns = 'mysql:host='.$this->host.';port='.$this->porta.';dbname='.$this->banco;
-        
+    public function __construct()
+    {
+        // Configura a conexão com o banco de dados
+        $dns = 'mysql:host=' . $this->host . ';port=' . $this->porta . ';dbname=' . $this->banco;
+
         $opcoes = [
-             //armanezar em cache a conexão para ser reutilizada, evitando sobrecarga de uma nova conexão. 
+            // Armazena em cache a conexão para ser reutilizada, evitando sobrecarga de uma nova conexão
             PDO::ATTR_PERSISTENT => true,
-            //lança um PDOException se ocorrer um erro
-            PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION
+            // Lança uma PDOException se ocorrer um erro
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ];
-        try{
-            //cria a instacia do PDO
-            $this->dbh = new PDO($dns, $this->usuario, $this->senha, $opcoes);
-        }catch(PDOException $error){
-          print "Error!";$error->getMessage()."<br/>";
-          die();
-          //fala
-        }//fim do catch
-    }//fim do método construtor
 
-    // prepara o statement com query
-    public function query($sql){
-        //prepara a consulta sql
-        $this->stmt= $this->dbh->prepare($sql);
-    }//fim da função query
-    //vincula um valor a um parâmetro
-    public function bind($parametro, $valor, $tipo= null){
-        if(is_null($tipo)):
-            switch(true):
+        try {
+            // Cria a instância do PDO
+            $this->dbh = new PDO($dns, $this->usuario, $this->senha, $opcoes);
+        } catch (PDOException $error) {
+            // Exibe uma mensagem de erro e encerra a execução
+            print "Erro ao conectar ao banco de dados: " . $error->getMessage() . "<br/>";
+            die();
+        }
+    }
+
+    /**
+     * Prepara uma query SQL para execução.
+     *
+     * @param string $sql Query SQL.
+     */
+    public function query($sql)
+    {
+        $this->stmt = $this->dbh->prepare($sql);
+    }
+
+    /**
+     * Vincula um valor a um parâmetro na query.
+     *
+     * @param string $parametro Nome do parâmetro.
+     * @param mixed $valor Valor a ser vinculado.
+     * @param int $tipo Tipo de dado (opcional).
+     */
+    public function bind($parametro, $valor, $tipo = null)
+    {
+        if (is_null($tipo)) {
+            switch (true) {
                 case is_int($valor):
                     $tipo = PDO::PARAM_INT;
                     break;
@@ -48,32 +63,60 @@ class Database{
                     break;
                 default:
                     $tipo = PDO::PARAM_STR;
-            endswitch;
-        endif;
+            }
+        }
         $this->stmt->bindValue($parametro, $valor, $tipo);
-    }//fim da função bind
-    //executa prepared statement
-     
-    public function executa(){
-        return $this->stmt->execute();
-    }//fim da função executa
+    }
 
-    //obtem um único registro 
-    public function resultado(){
+    /**
+     * Executa a query preparada.
+     *
+     * @return bool Retorna true se a execução for bem-sucedida, caso contrário, false.
+     */
+    public function executa()
+    {
+        return $this->stmt->execute();
+    }
+
+    /**
+     * Obtém um único registro como objeto.
+     *
+     * @return object|bool Retorna o registro ou false se não houver resultados.
+     */
+    public function resultado()
+    {
         $this->executa();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
-    }//fim da função resultados
-    //obtem um conjunto de registros
-    public function resultados(){
+    }
+
+    /**
+     * Obtém um conjunto de registros como um array de objetos.
+     *
+     * @return array|bool Retorna os registros ou false se não houver resultados.
+     */
+    public function resultados()
+    {
         $this->executa();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
-    }//fim da função resultados
-    //retorna o número de linhas afetadas pela última instrução SQL
-    public function totalResultados(){
+    }
+
+    /**
+     * Retorna o número de linhas afetadas pela última instrução SQL.
+     *
+     * @return int Número de linhas afetadas.
+     */
+    public function totalResultados()
+    {
         return $this->stmt->rowCount();
-    }//fim da função totalResultados
-    //retorna o ultimo ID inserido no banco de dados
-    public function ultimoIdInserido(){
+    }
+
+    /**
+     * Retorna o último ID inserido no banco de dados.
+     *
+     * @return string Último ID inserido.
+     */
+    public function ultimoIdInserido()
+    {
         return $this->dbh->lastInsertId();
-    }//fim da função ultimoIdInserido
-}//fim da classe Database
+    }
+}
