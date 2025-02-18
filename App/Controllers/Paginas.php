@@ -25,6 +25,10 @@ class Paginas extends Controller{
      public function barraproteica(){
       $this->view('pagina/barraproteica');
      }
+
+     public function gerenciar(){
+      $this->view('paginas/gerenciar');
+     }
 }//fim da classe Paginas
 
 ?>

@@ -41,6 +41,9 @@
                 <?php if(isset($_SESSION['usuario_id'])): ?>
                     <span class="navbar-text">
                         <p>Olá, <?= $_SESSION['usuario_nome'] ?>, seja bem-vindo(a)!</p>
+                        <a href="<?=URL?>/usuarios/gerenciar" class="btn btn-sm btn-outline-secondary ml-2" data-tooltip="tooltip" title="Minha Conta">
+                                <i class="fas fa-user"></i> Minha Conta
+                            </a>
                         <!-- Ícone do carrinho de compras -->
                         <a href="<?=URL?>/carrinho" class="btn btn-sm btn-outline-primary ml-2" data-tooltip="tooltip" title="Carrinho de Compras">
                             <i class="fas fa-shopping-cart"></i>
